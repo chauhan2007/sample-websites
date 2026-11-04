@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Satna | The Heart of Vindhya</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f8f6f0;
+    color: #172b35;
+}
+
+:root {
+    --dark: #102b36;
+    --gold: #c6a15b;
+    --cream: #f8f6f0;
+    --white: #ffffff;
+}
+
+/* NAVBAR */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(16,43,54,0.96);
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    background:
+    linear-gradient(rgba(8,29,37,0.55),rgba(8,29,37,0.75)),
+    url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=85&w=2000') center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-label {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    font-size: 17px;
+    color: #e0e5e5;
+    line-height: 1.8;
+    max-width: 550px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 32px;
+    background: var(--gold);
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* SECTION COMMON */
+
+section {
+    padding: 100px 9%;
+}
+
+.section-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 43px;
+    color: var(--dark);
+    margin-bottom: 25px;
+}
+
+.section-desc {
+    color: #66747a;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+/* HIGHLIGHTS */
+
+.highlights {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.highlights .section-title {
+    color: white;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.highlight-box {
+    padding: 35px 25px;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: 0.3s;
+}
+
+.highlight-box:hover {
+    border-color: var(--gold);
+    transform: translateY(-8px);
+}
+
+.highlight-box i {
+    font-size: 35px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.highlight-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.highlight-box p {
+    color: #c4ced1;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* PLACES */
+
+.places {
+    text-align: center;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.place-card {
+    background: white;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.place-card:hover {
+    transform: translateY(-8px);
+}
+
+.place-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.place-info {
+    padding: 25px;
+}
+
+.place-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.place-info p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #718087;
+}
+
+/* CULTURE */
+
+.culture {
+    background: #eee9dd;
+    text-align: center;
+}
+
+.culture-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.culture-content p {
+    line-height: 2;
+    color: #647178;
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact p {
+    color: #c4ced1;
+    line-height: 1.8;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--gold);
+    font-size: 22px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: var(--gold);
+    color: var(--dark);
+    transform: translateY(-6px);
+}
+
+.contact-details {
+    margin-top: 35px;
+    line-height: 2.2;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #091d25;
+    padding: 25px 8%;
+    text-align: center;
+    color: #aebbc0;
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+
+    header {
+        padding: 18px 6%;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .highlight-grid,
+    .places-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+
+    section {
+        padding: 75px 7%;
+    }
+
+    .hero {
+        padding: 0 7%;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+    .highlight-grid,
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+    <div class="logo">SATNA<span>.</span></div>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#places">Explore</a>
+        <a href="#culture">Culture</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Madhya Pradesh · India · 485001
+        </div>
+
+        <h1>
+            Discover<br>
+            <span>Satna.</span>
+        </h1>
+
+        <p>
+            A city where heritage meets progress,
+            where traditions tell stories and the
+            spirit of Vindhya lives forever.
+        </p>
+
+        <a href="#about" class="btn">
+            Explore Satna <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT SECTION -->
+
+<section class="about" id="about">
+
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=85&w=1000" alt="Indian architecture">
+    </div>
+
+    <div class="about-content">
+
+        <div class="section-label">Get to Know Us</div>
+
+        <h2 class="section-title">
+            Welcome to Satna
+        </h2>
+
+        <p class="section-desc">
+            Located in the beautiful Vindhya region of
+            Madhya Pradesh, Satna is a city known for
+            its cultural heritage, historical importance
+            and growing industrial identity.
+        </p>
+
+        <p class="section-desc">
+            From its ancient historical connections to
+            its modern-day development, Satna represents
+            a beautiful combination of tradition,
+            opportunity and progress.
+        </p>
+
+        <a href="#places" class="btn">Discover More</a>
+
+    </div>
+
+</section>
+
+
+<!-- HIGHLIGHTS -->
+
+<section class="highlights" id="highlights">
+
+    <div class="section-label">The Essence of Satna</div>
+
+    <h2 class="section-title">What Makes Satna Special?</h2>
+
+    <p class="section-desc">
+        A city with a unique identity and a rich legacy.
+    </p>
+
+    <div class="highlight-grid">
+
+        <div class="highlight-box">
+            <i class="fas fa-landmark"></i>
+            <h3>Rich Heritage</h3>
+            <p>
+                Home to historical places and
+                remarkable cultural traditions.
+            </p>
+        </div>
+
+        <div class="highlight-box">
+            <i class="fas fa-mountain-sun"></i>
+            <h3>Natural Beauty</h3>
+            <p>
+                Surrounded by the scenic landscapes
+                and natural beauty of the Vindhya region.
+            </p>
+        </div>
+
+        <div class="highlight-box">
+            <i class="fas fa-city"></i>
+            <h3>Growing City</h3>
+            <p>
+                An important regional centre for
+                education, business and industry.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PLACES -->
+
+<section class="places" id="places">
+
+    <div class="section-label">Explore the Region</div>
+
+    <h2 class="section-title">Places Worth Discovering</h2>
+
+    <p class="section-desc">
+        Explore the heritage and attractions in and around Satna.
+    </p>
+
+    <div class="places-grid">
+
+        <div class="place-card">
+
+            <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?q=85&w=900" alt="Temple">
+
+            <div class="place-info">
+                <h3>Maihar</h3>
+                <p>
+                    Famous for the revered Maa Sharda Devi
+                    Temple, located on Trikuta Hill.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=85&w=900" alt="Historical architecture">
+
+            <div class="place-info">
+                <h3>Bharhut</h3>
+                <p>
+                    An important archaeological site
+                    known for its ancient Buddhist heritage.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=85&w=900" alt="Fort">
+
+            <div class="place-info">
+                <h3>Madhavgarh Fort</h3>
+                <p>
+                    A historical attraction associated
+                    with the heritage of the Satna region.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CULTURE -->
+
+<section class="culture" id="culture">
+
+    <div class="culture-content">
+
+        <div class="section-label">Tradition & Identity</div>
+
+        <h2 class="section-title">
+            The Culture of Vindhya
+        </h2>
+
+        <p>
+            Satna reflects the cultural richness of
+            the Vindhya region. Its traditional festivals,
+            local cuisine, spiritual destinations and
+            welcoming people create an identity that
+            makes this region special.
+            <br><br>
+            It is more than just a city. It is a connection
+            to history, tradition and the future.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-label">Let's Connect</div>
+
+    <h2 class="section-title">Stay Connected</h2>
+
+    <p>
+        Have a question or want to know more about Satna?
+        <br>
+        Connect with us through your favourite platform.
+    </p>
+
+    <div class="social-icons">
+
+        <!-- Phone -->
+        <a href="tel:+919876543210" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+
+        <!-- Gmail -->
+        <a href="mailto:hello@example.com" title="Email Us">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919876543210" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <div class="contact-details">
+        <p><i class="fas fa-map-marker-alt"></i> Satna, Madhya Pradesh, India - 485001</p>
+        <p><i class="fas fa-envelope"></i> hello@example.com</p>
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © <span id="year"></span> SATNA.
+        All Rights Reserved.
+        Designed with <span>♥</span>
+    </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
+document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
